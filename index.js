@@ -1,13 +1,13 @@
 const leveldb = require('level')
 const async = require('async')
 const semaphore = require('semaphore')
-const ethUtils = require('ethereumjs-util')
-const BN = ethUtils.BN
-const Blockchain = require('ethereumjs-blockchain')
-const Block = require('ethereumjs-block')
-const Network = require('devp2p')
-const genesisHash = require('ethereum-common').genesisHash.v.slice(2)
-const EthPeerManager = require('devp2p-eth')
+const vapUtils = require('vaporyjs-util')
+const BN = vapUtils.BN
+const Blockchain = require('vaporyjs-blockchain')
+const Block = require('vaporyjs-block')
+const Network = require('@vaporyjs/devp2p')
+const genesisHash = require('vapory-common').genesisHash.v.slice(2)
+const VapPeerManager = require('devp2p-vap')
 const SyncManager = require('./syncManager.js')
 
 var db = leveldb('./blockchaindb')
@@ -27,7 +27,7 @@ function doTheTango(){
     // peerDB: peerDB,
     secretKey: new Buffer('a153387bcc66f16b6aeaed404d3c3e2ec04f3a85c6942e9de107fb8b2f71e322', 'hex'),
     capabilities: {
-      eth: 61
+      vap: 61
     }
   })
 
@@ -43,7 +43,7 @@ function doTheTango(){
       console.log('stream ended')
     })
 
-    var peerMan = new EthPeerManager(stream)
+    var peerMan = new VapPeerManager(stream)
     setupPeerHandlers()
 
     // initialize

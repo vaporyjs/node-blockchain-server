@@ -1,7 +1,7 @@
-const BN = require('ethereumjs-util').BN
-const genesisHash = require('ethereum-common').genesisHash.v.slice(2)
+const BN = require('vaporyjs-util').BN
+const genesisHash = require('vapory-common').genesisHash.v.slice(2)
 const async = require('async')
-const ethUtil = require('ethereumjs-util')
+const ethUtil = require('vaporyjs-util')
 
 var SyncManager = module.exports = function(blockchain) {
   this.maxNumToDownload = 32 // the number of hashed to get per request TODO: vary on rating of peer

@@ -1,7 +1,7 @@
 const leveldb = require('level')
-const VM = require('ethereumjs-vm')
-const Blockchain = require('ethereumjs-blockchain')
-const StateTrie = require('merkle-patricia-tree/secure')
+const VM = require('vaporyjs-vm')
+const Blockchain = require('vaporyjs-blockchain')
+const StateTrie = require('@vaporyjs/merkle-patricia-tree/secure')
 
 var blockchainDb = leveldb('./blockchaindb')
 var stateDb = leveldb('./statedb')
