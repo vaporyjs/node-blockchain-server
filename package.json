@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/vaporyjs/node-blockchain-server",
   "dependencies": {
-    "async": "^1.4.2",
+    "async": "^2.6.4",
     "@vaporyjs/devp2p": "^0.0.5",
     "devp2p-vap": "0.0.1",
     "vapory-common": "^0.2.2",
